@@ -25,7 +25,7 @@ steps:
 # Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
 - task: CmdLine@2
   inputs:
-    script: 'HI This is Ananthan's sample program.' 
+    script: HI This is Ananthan's sample program
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
 
