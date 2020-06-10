@@ -20,6 +20,15 @@ steps:
 - script: bundle exec rake
   displayName: 'bundle exec rake'
 
+
+# Command line
+# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+- task: CmdLine@2
+  inputs:
+    script: 'HI This is Ananthan's sample program.' 
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
+
 # - script: bundle exec rspec spec --format RspecJunitFormatter --out test_results/TEST-rspec.xml
 
 - task: PublishTestResults@2
