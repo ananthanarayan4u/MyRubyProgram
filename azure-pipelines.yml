@@ -16,5 +16,8 @@ steps:
 - script: gem install rails && rails -v
   displayName: 'gem install rails'
 
+- script: gem install cucumber
+  displayName: 'Installing Cucumber'
+
 - script: cucumber features/google.feature -f pretty -f html -o reports/index.html
   displayName: 'Executing TCs'
