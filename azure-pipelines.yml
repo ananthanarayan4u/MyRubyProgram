@@ -38,4 +38,16 @@ steps:
   displayName: 'Checking the Artifact'
     
    
-    
+
+- script: cucumber features/google.feature -f pretty -f html -o $(Build.ArtifactStagingDirectory)/CucumberOutput.html
+  displayName: 'Executing TCs 1'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'CucumberOutput.html'
+    publishLocation: 'Container'
+
+- script: ls -ltr $(Build.ArtifactStagingDirectory)/CucumberOutput.html
+  displayName: 'Checking the Artifacts'
