@@ -53,3 +53,17 @@ steps:
     downloadType: 'specific'
     itemPattern: '*CucumberOutput*.html'
     downloadPath: 'https://github.com/ananthanarayan4u/MyRubyProgram'
+
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'https://github.com/ananthanarayan4u/MyRubyProgram/tree/master/features'
+    username: 'ananthanarayan4u'
+    password: 'KuttuAmbady1'
+    rootDirectory: '$(System.ArtifactsDirectory)'
+    filePatterns: '*CucumberOutput*.html'
+    remoteDirectory: '/support'
+    clean: false
+    cleanContents: false
+    preservePaths: true
+    trustSSL: true
