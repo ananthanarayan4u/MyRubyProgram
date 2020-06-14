@@ -19,5 +19,6 @@ steps:
 - script: gem install cucumber
   displayName: 'Installing Cucumber'
 
-- script: cucumber features/google.feature -f pretty -f html -o CucumberOutput.html
+- script: cucumber features/google.feature -f pretty -f html -o features/CucumberOutput.html
   displayName: 'Executing TCs'
+
