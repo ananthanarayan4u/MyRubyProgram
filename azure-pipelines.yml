@@ -1,16 +1,12 @@
 # A pipeline for triggering the Cucumber Feature Files
+# Package your Ruby application.
+# Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 pool:
-  vmImage: 'ubuntu-16.04' # other options: 'macOS-10.14', 'vs2017-win2016'
-  
+  vmImage: 'Ubuntu 16.04'
+
 steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.5'
-    
-    
-    - script: gem install rails && rails -v
-  displayName: 'gem install rails'
-  
-  
