@@ -19,10 +19,8 @@ steps:
 - script: gem install cucumber
   displayName: 'Installing Cucumber'
 
-- script: rm /home/vsts/work/1/s/features/CucumberOutput.html
-  displayName: 'Cleaning the Artifact'
 
-- script: cucumber features/google.feature -f pretty -f html -o features/CucumberOutput.html
+- script: cucumber features/google.feature -f pretty -f html -o $(Build.ArtifactStagingDirectory)/CucumberOutput.html
   displayName: 'Executing TCs'
 
 - task: DownloadPipelineArtifact@2
@@ -35,20 +33,7 @@ steps:
     allowPartiallySucceededBuilds: true
     allowFailedBuilds: true
     itemPattern: '**.html'
-    targetPath: 'features'
-
-- script: ls -ltr /home/vsts/work/1/s/features/CucumberOutput.html
-  displayName: 'Checking the Artifact'
-    
-   
-- script: cucumber features/google.feature -f pretty -f html -o $(Build.ArtifactStagingDirectory)/CucumberOutput.html
-  displayName: 'Executing TCs 1'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'CucumberOutput.html'
-    publishLocation: 'Container'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
 
 - script: ls -ltr $(Build.ArtifactStagingDirectory)/CucumberOutput.html
-  displayName: 'Checking the Artifacts1'
+  displayName: 'Checking the Artifact'
