@@ -4,10 +4,9 @@ then the results for the search will be displayed. Designed for Firefox on macOS
 =end
 
 require "json"
-require "base62"
-require "uri"
-require 'net/http'
-require 'httparty'
+###require "uri"
+###require 'net/http'
+####require 'httparty'
 
 puts "Starting the execution"
 
