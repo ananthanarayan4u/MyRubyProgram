@@ -22,3 +22,14 @@ steps:
 - script: cucumber features/google.feature -f pretty -f html -o features/CucumberOutput.html
   displayName: 'Executing TCs'
 
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: '47e7e088-d4f9-4c3b-9006-0e6af0cde64a'
+    definition: '3'
+    specificBuildWithTriggering: true
+    buildVersionToDownload: 'latest'
+    allowPartiallySucceededBuilds: true
+    allowFailedBuilds: true
+    itemPattern: '**.html'
+    targetPath: '$(Pipeline.Workspace)'
