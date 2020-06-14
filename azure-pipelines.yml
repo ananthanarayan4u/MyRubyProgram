@@ -32,4 +32,4 @@ steps:
     allowPartiallySucceededBuilds: true
     allowFailedBuilds: true
     itemPattern: '**.html'
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: 'features'
