@@ -1,6 +1,4 @@
 # A pipeline for triggering the Cucumber Feature Files
-# Package your Ruby application.
-# Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 pool:
