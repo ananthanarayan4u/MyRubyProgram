@@ -33,3 +33,10 @@ steps:
     allowFailedBuilds: true
     itemPattern: '**.html'
     targetPath: 'features'
+    
+    
+    - script: cd  /home/vsts/work/1/s/features
+    ls -ltr CucumberOutput.html
+  displayName: 'Checking the Artifact'
+   
+    
