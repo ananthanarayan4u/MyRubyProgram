@@ -37,3 +37,11 @@ steps:
 
 - script: ls -ltr $(Build.ArtifactStagingDirectory)/CucumberOutput.html
   displayName: 'Checking the Artifact'
+
+
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '*CucumberOutput*.html'
+    downloadPath: '$(System.ArtifactsDirectory)'
