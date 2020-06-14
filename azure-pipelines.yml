@@ -45,3 +45,11 @@ steps:
     downloadType: 'specific'
     itemPattern: '*CucumberOutput*.html'
     downloadPath: '$(System.ArtifactsDirectory)'
+
+    
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '*CucumberOutput*.html'
+    downloadPath: 'https://github.com/ananthanarayan4u/MyRubyProgram'
