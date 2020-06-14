@@ -10,7 +10,7 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
-    CALL gem install bundler
+    CALL gem install bundler:1.16.4
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
   
