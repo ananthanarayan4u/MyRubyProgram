@@ -34,7 +34,7 @@ steps:
     itemPattern: '**.html'
     targetPath: 'features'
 
-- script: cd  /home/vsts/work/1/s/features
+- script: ls -ltr /home/vsts/work/1/s/features/CucumberOutput.html
   displayName: 'Checking the Artifact'
     
    
