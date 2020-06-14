@@ -8,6 +8,11 @@ steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.5'
-    
+
+- script: |
+    CALL gem install bundler
+    bundle install --retry=3 --jobs=4
+  displayName: 'bundle install'
+  
 - script: gem install rails && rails -v
   displayName: 'gem install rails'
